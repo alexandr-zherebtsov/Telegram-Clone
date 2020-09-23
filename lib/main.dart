@@ -15,7 +15,7 @@ class FlutgramApp extends StatelessWidget {
       title: 'Flutgram',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: whiteColor,
+        primaryColor: blackColor,
       ),
       home: HomePage(),
     );

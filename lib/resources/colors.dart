@@ -1,6 +1,7 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-const whiteColor = Color(0xFFFFFFFF);
+const whiteColor = Colors.white;
+const blackColor = Colors.black;
 
 const whiteOpacity = Color(0xDDFFFFFF);
 const opacityColor = Color(0x00FFFFFF);

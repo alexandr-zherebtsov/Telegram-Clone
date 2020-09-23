@@ -49,7 +49,7 @@ class UserMessages extends StatelessWidget {
         backgroundImage: AssetImage(userIcon),
         radius: 25,
         child: userOnlineNow ? Stack(
-          overflow: Overflow.visible,
+          clipBehavior: Clip.none,
           children: <Widget>[
             Positioned(
               top: 38,

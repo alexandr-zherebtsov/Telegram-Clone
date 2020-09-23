@@ -94,14 +94,17 @@ class DialogWidget extends StatelessWidget {
           color: whiteColor,
           child: Row(
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.insert_emoticon),
-                splashColor: opacityColor,
-                highlightColor: opacityColor,
-                iconSize: 25.0,
-                color: blackGray,
-                onPressed: () {},
-                tooltip: 'Emoji',
+              ClipOval(
+                child: Material(
+                  color: opacityColor,
+                  child: IconButton(
+                    icon: Icon(Icons.insert_emoticon),
+                    iconSize: 25.0,
+                    color: blackGray,
+                    onPressed: () {},
+                    tooltip: 'Emoji',
+                  ),
+                ),
               ),
               Expanded(
                 child: TextField(
@@ -114,26 +117,32 @@ class DialogWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Transform.rotate(
-                angle: 2.3,
-                child: IconButton(
-                  icon: Icon(Icons.attachment),
-                  splashColor: opacityColor,
-                  highlightColor: opacityColor,
-                  iconSize: 25.0,
-                  color: blackGray,
-                  onPressed: () {},
-                  tooltip: 'Attach',
+              ClipOval(
+                child: Material(
+                  color: opacityColor,
+                  child: Transform.rotate(
+                    angle: 2.3,
+                    child: IconButton(
+                      icon: Icon(Icons.attachment),
+                      iconSize: 25.0,
+                      color: blackGray,
+                      onPressed: () {},
+                      tooltip: 'Attach',
+                    ),
+                  ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.send),
-                splashColor: opacityColor,
-                highlightColor: opacityColor,
-                iconSize: 25.0,
-                color: blackGray,
-                onPressed: () {},
-                tooltip: 'Send',
+              ClipOval(
+                child: Material(
+                  color: opacityColor,
+                  child: IconButton(
+                    icon: Icon(Icons.send),
+                    iconSize: 25.0,
+                    color: blackGray,
+                    onPressed: () {},
+                    tooltip: 'Send',
+                  ),
+                ),
               ),
             ],
           ),

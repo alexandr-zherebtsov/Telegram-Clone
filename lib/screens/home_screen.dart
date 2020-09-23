@@ -14,8 +14,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      home: DefaultTabController(
+    return DefaultTabController(
         length: foldersNames.length,
         child: Scaffold(
           backgroundColor: whiteColor,
@@ -53,7 +52,6 @@ class _HomePageState extends State<HomePage> {
               unselectedLabelColor: mediumGray,
               indicatorColor: blackGray,
               labelColor: blackGray,
-
               tabs: foldersNames.map((FoldersNames foldersNames) {
                 return Tab(
                   text: foldersNames.title,
@@ -85,7 +83,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

@@ -31,7 +31,7 @@ class ExpandMore extends StatelessWidget {
         backgroundImage: AssetImage(iconData),
         radius: 15,
         child: nowInThisDevice ? Stack(
-          overflow: Overflow.visible,
+          clipBehavior: Clip.none,
           children: <Widget>[
             Positioned(
               top: 20,
@@ -154,17 +154,22 @@ class _SideBarState extends State<SideBar> {
                                 borderRadius: BorderRadius.circular(100),
                                 color: opacityColorSome,
                               ),
-                              child: Transform.rotate(
-                                angle: 1.0,
-                                child: IconButton(
-                                  padding: const EdgeInsets.all(0),
-                                  icon: Icon(
-                                    Icons.brightness_2,
-                                    color: blackGray,
-                                    size: 20,
+                              child: ClipOval(
+                                child: Material(
+                                  color: opacityColor,
+                                  child: Transform.rotate(
+                                    angle: 1.0,
+                                    child: IconButton(
+                                      padding: const EdgeInsets.all(0),
+                                      icon: Icon(
+                                        Icons.brightness_2,
+                                        color: blackGray,
+                                        size: 20,
+                                      ),
+                                      tooltip: 'Change theme',
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  tooltip: 'Change theme',
-                                  onPressed: () {},
                                 ),
                               ),
                             ),
@@ -200,28 +205,31 @@ class _SideBarState extends State<SideBar> {
                                 ),
                               ],
                             ),
-                            Transform.rotate(
-                              angle: rotateExpandMore,
-                              child: IconButton(
-                                splashColor: opacityColor,
-                                highlightColor: opacityColor,
-                                icon: Icon(
-                                  Icons.expand_more,
-                                  color: blackGray,
-                                  size: 32,
+                            ClipOval(
+                              child: Material(
+                                color: opacityColor,
+                                child: Transform.rotate(
+                                  angle: rotateExpandMore,
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.expand_more,
+                                      color: blackGray,
+                                      size: 32,
+                                    ),
+                                    tooltip: expandMore ? 'Close' : 'Open',
+                                    onPressed: () {
+                                      setState(() {
+                                        if (!expandMore) {
+                                          expandMore = true;
+                                          rotateExpandMore = 3.15;
+                                        } else {
+                                          expandMore = false;
+                                          rotateExpandMore = 0.0;
+                                        }
+                                      });
+                                    },
+                                  ),
                                 ),
-                                tooltip: expandMore ? 'Close' : 'Open',
-                                onPressed: () {
-                                  setState(() {
-                                    if (!expandMore) {
-                                      expandMore = true;
-                                      rotateExpandMore = 3.15;
-                                    } else {
-                                      expandMore = false;
-                                      rotateExpandMore = 0.0;
-                                    }
-                                  });
-                                },
                               ),
                             ),
                           ],
